@@ -14,11 +14,14 @@
     "lint": "npm run lint --workspaces --if-present",
     "test": "npm run test -w shared && npm run test -w server && npm run test -w client",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
     "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "prettier": "^3.8.1",
     "typescript": "^5.7.0"
   }
