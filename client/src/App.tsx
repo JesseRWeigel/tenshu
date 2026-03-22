@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ThemeProvider } from './hooks/useTheme'
 import { DemoProvider } from './hooks/useDemo'
+import { ErrorBoundary } from './components/ErrorBoundary'
 import { Sidebar } from './components/Sidebar'
 import { ThemedMain } from './components/ThemedMain'
 import { DemoBanner } from './components/DemoBanner'
@@ -27,17 +28,19 @@ function App() {
               <Sidebar />
               <ThemedMain>
                 <DemoBanner />
-                <Routes>
-                  <Route path="/" element={<Dashboard />} />
-                  <Route path="/command" element={<Office />} />
-                  <Route path="/sessions" element={<Sessions />} />
-                  <Route path="/cron" element={<Cron />} />
-                  <Route path="/results" element={<Results />} />
-                  <Route path="/system" element={<System />} />
-                  <Route path="/activity" element={<Activity />} />
-                  <Route path="/knowledge" element={<Knowledge />} />
-                  <Route path="/interactions" element={<Interactions />} />
-                </Routes>
+                <ErrorBoundary>
+                  <Routes>
+                    <Route path="/" element={<Dashboard />} />
+                    <Route path="/command" element={<Office />} />
+                    <Route path="/sessions" element={<Sessions />} />
+                    <Route path="/cron" element={<Cron />} />
+                    <Route path="/results" element={<Results />} />
+                    <Route path="/system" element={<System />} />
+                    <Route path="/activity" element={<Activity />} />
+                    <Route path="/knowledge" element={<Knowledge />} />
+                    <Route path="/interactions" element={<Interactions />} />
+                  </Routes>
+                </ErrorBoundary>
               </ThemedMain>
             </div>
           </BrowserRouter>
