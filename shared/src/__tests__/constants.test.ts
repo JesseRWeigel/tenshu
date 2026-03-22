@@ -4,6 +4,7 @@ import {
   AGENT_COLORS,
   DEFAULT_PORT,
   DEFAULT_CLIENT_PORT,
+  DEFAULT_OPENCLAW_DIR,
 } from '../constants.js'
 
 describe('STATUS_COLORS', () => {
@@ -42,5 +43,32 @@ describe('defaults', () => {
   it('has correct default ports', () => {
     expect(DEFAULT_PORT).toBe(3001)
     expect(DEFAULT_CLIENT_PORT).toBe(5173)
+  })
+
+  it('has correct default openclaw directory', () => {
+    expect(DEFAULT_OPENCLAW_DIR).toBe('~/.openclaw')
+  })
+})
+
+describe('STATUS_COLORS completeness', () => {
+  it('has exactly 5 status entries', () => {
+    expect(Object.keys(STATUS_COLORS)).toHaveLength(5)
+  })
+
+  it('has specific color values for all statuses', () => {
+    expect(STATUS_COLORS.thinking).toBe('#3b82f6')
+    expect(STATUS_COLORS.idle).toBe('#6b7280')
+    expect(STATUS_COLORS.offline).toBe('#374151')
+  })
+})
+
+describe('AGENT_COLORS', () => {
+  it('has exactly 8 colors', () => {
+    expect(AGENT_COLORS).toHaveLength(8)
+  })
+
+  it('contains no duplicate colors', () => {
+    const unique = new Set(AGENT_COLORS)
+    expect(unique.size).toBe(AGENT_COLORS.length)
   })
 })
