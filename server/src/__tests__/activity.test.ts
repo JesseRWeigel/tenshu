@@ -257,9 +257,13 @@ More content here...`
 
       expect(data).toHaveLength(3)
       // Files are sorted alphabetically in reverse, so: qa, research, coder
-      expect(data.find((d) => d.type === 'qa')).toBeDefined()
-      expect(data.find((d) => d.type === 'coder')).toBeDefined()
-      expect(data.find((d) => d.type === 'research')).toBeDefined()
+      expect(data.find((d: { type: string }) => d.type === 'qa')).toBeDefined()
+      expect(
+        data.find((d: { type: string }) => d.type === 'coder'),
+      ).toBeDefined()
+      expect(
+        data.find((d: { type: string }) => d.type === 'research'),
+      ).toBeDefined()
     })
 
     it('extracts preview from first substantive paragraph', async () => {
