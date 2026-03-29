@@ -179,6 +179,7 @@ export function Knowledge() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Knowledge Base</h1>
       <ThemedPageHeader kanji="智庫" title="KNOWLEDGE BASE" />
 
       {/* Stats Row */}
@@ -214,7 +215,7 @@ export function Knowledge() {
       )}
 
       {/* Search & Filter */}
-      <div className="flex gap-3 items-center">
+      <div className="flex gap-3 items-center" role="search">
         <div className="flex-1 relative">
           <input
             type="text"
@@ -223,6 +224,7 @@ export function Knowledge() {
             onChange={(e) => setSearch(e.target.value)}
             className="w-full px-3 py-2 rounded-md bg-white/5 border text-sm text-zinc-100 placeholder-zinc-500 outline-none focus:ring-1"
             style={{ borderColor: `${accent}33`, outlineColor: accent }}
+            aria-label="Search artifacts"
           />
         </div>
         <div className="flex gap-1">
@@ -244,7 +246,7 @@ export function Knowledge() {
         </div>
       </div>
 
-      <p className="text-xs text-zinc-500">
+      <p className="text-xs text-zinc-500" aria-live="polite">
         {filteredArtifacts.length} of {total} artifacts
       </p>
 

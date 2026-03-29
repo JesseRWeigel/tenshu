@@ -266,6 +266,7 @@ export function Results() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Results</h1>
       <div className="flex items-center justify-between">
         <ThemedPageHeader kanji="戦績" title="BATTLE RECORD" />
         {/* Agent filter tabs */}

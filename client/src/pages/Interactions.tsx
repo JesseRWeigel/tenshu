@@ -389,6 +389,7 @@ export function Interactions() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Interaction Map</h1>
       <ThemedPageHeader kanji="連携図" title="INTERACTION MAP" />
 
       <div className="grid grid-cols-4 gap-3">

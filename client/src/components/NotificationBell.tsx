@@ -88,7 +88,12 @@ export function NotificationBell({ accent }: { accent: string }) {
       <button
         onClick={handleOpen}
         className="p-1.5 rounded-md transition-colors hover:bg-white/5 relative"
-        title="Notifications"
+        aria-label={
+          unread > 0
+            ? `Notifications, ${unread} unread`
+            : 'Notifications, no unread'
+        }
+        aria-expanded={open}
       >
         <Bell
           className="w-3.5 h-3.5"
@@ -98,6 +103,7 @@ export function NotificationBell({ accent }: { accent: string }) {
           <span
             className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 rounded-full text-[8px] font-bold flex items-center justify-center text-white"
             style={{ backgroundColor: '#ef4444' }}
+            aria-hidden="true"
           >
             {unread > 9 ? '9+' : unread}
           </span>

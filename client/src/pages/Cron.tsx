@@ -45,6 +45,7 @@ export function Cron() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Scheduled Operations</h1>
       <ThemedPageHeader kanji="定時任務" title="SCHEDULED OPS" />
 
       {jobs.length === 0 ? (

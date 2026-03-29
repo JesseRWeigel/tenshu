@@ -216,6 +216,7 @@ export function Activity() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Activity Log</h1>
       <ThemedPageHeader kanji="作戦記録" title="ACTIVITY LOG" />
 
       {/* Current Cycle */}

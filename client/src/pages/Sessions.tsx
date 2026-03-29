@@ -29,6 +29,7 @@ export function Sessions() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">Sessions</h1>
       <ThemedPageHeader kanji="通信" title="SESSIONS" />
 
       {/* Stats */}
