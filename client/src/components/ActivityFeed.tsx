@@ -59,7 +59,7 @@ export function ActivityFeed() {
         {items.length === 0 ? (
           <p className="text-sm text-zinc-600">Waiting for activity...</p>
         ) : (
-          <div className="space-y-2">
+          <div className="space-y-2" aria-live="polite">
             {items.map((item) => (
               <div key={item.id} className="text-sm">
                 <span className="text-emerald-500">

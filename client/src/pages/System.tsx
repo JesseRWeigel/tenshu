@@ -74,6 +74,7 @@ export function System() {
 
   return (
     <div className="space-y-6">
+      <h1 className="sr-only">System Instruments</h1>
       <div className="flex items-center justify-between">
         <ThemedPageHeader kanji="計器" title="INSTRUMENTS" />
         <Badge

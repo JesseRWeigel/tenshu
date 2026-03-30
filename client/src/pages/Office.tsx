@@ -30,6 +30,7 @@ export function Office() {
 
   return (
     <div className="relative w-full h-full -m-6">
+      <h1 className="sr-only">Command Center</h1>
       {theme === 'warroom' ? (
         <WarRoom
           agents={agents}
