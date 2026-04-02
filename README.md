@@ -155,6 +155,8 @@ tenshu/
 
 **Data flow:** Server reads `openclaw.json` as single source of truth → polls `openclaw sessions` CLI for live sessions → watches agent workspaces for file changes → reads `nvidia-smi` and `/proc` for system metrics → broadcasts updates via WebSocket → client renders in real-time.
 
+See the full [API Reference](docs/API.md) for all REST endpoints and WebSocket events.
+
 ## Tech Stack
 
 | Layer          | Technology                                                                  |
